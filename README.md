@@ -147,4 +147,7 @@
        3. Mark the adjacent node with exactly opposite color, and continue the recursive call for the next adjacent nodes.
        4. Also keep checking the color of adjacent nodes for each node.
        5. If we come across a situation where two adjacent nodes have same color, we will return false (graph is not bipartite), else return true.
+     * Complexity:
+         * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
+         * Space complexity: O(N+E) + O(N) + O(N) -> Space for adjacency list, visited array, and auxiliary space.
 
