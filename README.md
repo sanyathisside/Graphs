@@ -29,7 +29,7 @@
 <hr/>
 
 ## Graph representation in C++:
- 1. `Adjacency matrix`:
+ 1. <a href="https://github.com/sanya2508/Graphs/blob/main/a.%20Adjacency%20matrix%20representation.cpp">Adjacency matrix: </a>
     1. Find out the number of nodes.
     2. Check if it is one based indexing or zero based indexing.
        * If it is one based indexing we create 6*6 2D array.
@@ -40,7 +40,7 @@
       1. We can only use adjacency matrix for smaller values of n.
     * Space complexity: O(n*n)
   
-  2. `Adjacency List:`
+  2. <a href="https://github.com/sanya2508/Graphs/blob/main/b.%20Adjacency%20List%20Representation.cpp">Adjacency List: </a>
     1. If it's an undirected or directed graph, we are going to have vector<int> of an adjaceny array of size (n+1).
        * For directed:
           ```
@@ -58,3 +58,10 @@
       * Undirected: O(N+2E)
       * Directed: O(N+E)
     * If there is an edge weight as well, then we can convert the vector into pair <int, int> instead of int.
+
+
+<hr/>
+
+## Connected components in a graph:
+ * A graph can either be a connected graph, or disconnected graph.
+ * In general, whatever code we write, we have to write for multiple components.
