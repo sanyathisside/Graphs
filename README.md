@@ -156,21 +156,21 @@
 
 ## Cycle detection in directed graph:
    1. <a href="https://github.com/sanya2508/Graphs/blob/main/i.%20Cycle%20Detection%20in%20Directed%20Graph%20using%20DFS.cpp">Using DFS: </a>
-     * We will have to use a self dfs along with visited  dfs in case of directed graph.
-     1. We need to create two visited arrays.
+      * We will have to use a self dfs along with visited  dfs in case of directed graph.
+      1. We need to create two visited arrays.
           1. Visited, and
           2. Dfs visited. (To keep a track if a node was visited in the same dfs call or not).
-     2. We take the initial value of node and check if that is unvisited. If that is unvisited we call the cycleCheck for that node.
-     3. Whenever cycleCheck of a node is called, we mark the visited and dfs visited array for that node as visited.
-     4. Now we call the cycleCheck for the adjacent node. (Also, mark visited in both arrays).
-     5. We do recurvise calls on the adjacent and next adjacent nodes.
-     6. Once we reach to a point where there is no further adjacent nodes that's not visited, there will be no further recursion calls.
-     7. We will try to go back.
-     8. Whenever a recursion call for a function or a dfs is over, we will take that value out of dfs visited array. (Because that dfs is over for that node).
-     9. If while traversing, we find a node that has been visited in both the arrays, then only we can say that cycle is present in the graph.
-     * Complexity:
-         * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
-         * Space complexity: O(N+E) + O(2N) + O(N) -> Space for adjacency list, visited and dfs visited array, and auxiliary space.
+      2. We take the initial value of node and check if that is unvisited. If that is unvisited we call the cycleCheck for that node.
+      3. Whenever cycleCheck of a node is called, we mark the visited and dfs visited array for that node as visited.
+      4. Now we call the cycleCheck for the adjacent node. (Also, mark visited in both arrays).
+      5. We do recurvise calls on the adjacent and next adjacent nodes.
+      6. Once we reach to a point where there is no further adjacent nodes that's not visited, there will be no further recursion calls.
+      7. We will try to go back.
+      8. Whenever a recursion call for a function or a dfs is over, we will take that value out of dfs visited array. (Because that dfs is over for that node).
+      9. If while traversing, we find a node that has been visited in both the arrays, then only we can say that cycle is present in the graph.
+      * Complexity:
+          * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
+          * Space complexity: O(N+E) + O(2N) + O(N) -> Space for adjacency list, visited and dfs visited array, and auxiliary space.
    
    2. <a href="https://github.com/sanya2508/Graphs/blob/main/l.%20Cycle%20Detection%20in%20Directed%20Graph%20using%20BFS.cpp">Using BFS (Kahn's Algorithm): </a>
       * Kahn's algorithm is finding topological sort, and topological sort is only possible for directed acylic graph.
