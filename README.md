@@ -65,3 +65,26 @@
 ## Connected components in a graph:
  * A graph can either be a connected graph, or disconnected graph.
  * In general, whatever code we write, we have to write for multiple components.
+
+<hr/>
+
+## Traversal Techniques:
+  1. <a href="https://github.com/sanya2508/Graphs/blob/main/c.%20Breadth-First%20Traversal.cpp">Breadth-First Search (BFS): </a>
+      * BFS is traversing the adjacent nodes at first, and after that moving on  to next nodes.
+      * For each component:
+        1. At first we have to take a visited array, and every thing will be marked as zero which means none of the nodes has been visited yet.
+        2. Now, we take a queue, insert the first node into it, and mark it as visited in the visited array.
+        3. Now, iterate till the queue is not empty.
+        4. Take the topmost element of the queue, and remove that element from the queue.
+        5. Take the adjacent nodes of the node that we popped from the queue, and insert those nodes into the queue (only if not visited). Mark visited for those nodes as well.
+        6. Continue this till we get all the adjacent nodes, for all nodes. (The queue is empty).
+      * Complexity:
+        * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
+        * Space complexity: O(N+E) + O(N) + O(N) -> Space for adjacency list, visited array, and queue.
+        
+    
+   2. <a href="">Depth-First Search:</a>
+       * DFS is traversing the graph in depthward motion. It is a recursive function.
+       * For each component:
+         1. Create a visited array of size V+1. Mark all the indexes as zero.
+         2. 
