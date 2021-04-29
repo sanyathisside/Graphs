@@ -71,20 +71,47 @@
 ## Traversal Techniques:
   1. <a href="https://github.com/sanya2508/Graphs/blob/main/c.%20Breadth-First%20Traversal.cpp">Breadth-First Search (BFS): </a>
       * BFS is traversing the adjacent nodes at first, and after that moving on  to next nodes.
-      * For each component:
         1. At first we have to take a visited array, and every thing will be marked as zero which means none of the nodes has been visited yet.
-        2. Now, we take a queue, insert the first node into it, and mark it as visited in the visited array.
-        3. Now, iterate till the queue is not empty.
-        4. Take the topmost element of the queue, and remove that element from the queue.
-        5. Take the adjacent nodes of the node that we popped from the queue, and insert those nodes into the queue (only if not visited). Mark visited for those nodes as well.
-        6. Continue this till we get all the adjacent nodes, for all nodes. (The queue is empty).
+        2. Run a for loop so that it calls bfs for every component of the graph.
+        3. Now, we take a queue, insert the first node into it, and mark it as visited in the visited array.
+        4. Now, iterate till the queue is not empty.
+        5. Take the topmost element of the queue, and remove that element from the queue.
+        6. Take the adjacent nodes of the node that we popped from the queue, and insert those nodes into the queue (only if not visited). Mark visited for those nodes as well.
+        7. Continue this till we get all the adjacent nodes, for all nodes. (The queue is empty).
       * Complexity:
         * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
         * Space complexity: O(N+E) + O(N) + O(N) -> Space for adjacency list, visited array, and queue.
         
     
-   2. <a href="">Depth-First Search:</a>
+   2. <a href="https://github.com/sanya2508/Graphs/blob/main/d.%20Depth-First%20Search%20Traversal.cpp">Depth-First Search:</a>
        * DFS is traversing the graph in depthward motion. It is a recursive function.
-       * For each component:
          1. Create a visited array of size V+1. Mark all the indexes as zero.
-         2. 
+         2. Run a for loop so that it calls bfs for every component of the graph.
+         3. Take the first node, mark it as visited.
+         4. Make a recursive call to its adjacent nodes, and mark those nodes as visited.
+         5. Continue this recurvise call till there is no further recursive dfs calls that will be made.
+         6. Come back, and make recursive calls for other adjacent nodes.
+       * Complexity:
+         * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
+         * Space complexity: O(N+E) + O(N) + O(N) -> Space for adjacency list, visited array, and auxiliary space.
+
+<hr/>
+
+## Cycle detection in undirected graph:
+  * <a href="https://github.com/sanya2508/Graphs/blob/main/e.%20Cycle%20detection%20in%20Undirected%20Graph%20using%20bfs.cpp">Usign BFS: </a>
+     * If any of the adjacent node has been visited previously, then we can say that there is a cycle.
+     1. Create a visited array of size V+1. Mark all the indexes as zero.
+     2. Run a for loop so that it calls bfs for every component of the graph.
+     3. In the normal bfs we did just put the node in the queue, but here we will modify it. 
+     4. Here we are going to put the node, as well as their previous/parent node in the queue.
+     5. Take the previous/parent node for the starting node as -1.
+     6. Mark the node as visited after putting it into the queue.
+     7. Take every node from the queue and check if it's already been visited (not including the parent node).
+     8. If we get any node that's already been visited, then we can return true (cycle is present), else cycle is not present.
+     * Complexity:
+        * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
+        * Space complexity: O(N+E) + O(N) + O(N) -> Space for adjacency list, visited array, and queue.
+
+
+  * <a href
+     
