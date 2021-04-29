@@ -147,7 +147,69 @@
        3. Mark the adjacent node with exactly opposite color, and continue the recursive call for the next adjacent nodes.
        4. Also keep checking the color of adjacent nodes for each node.
        5. If we come across a situation where two adjacent nodes have same color, we will return false (graph is not bipartite), else return true.
-     * Complexity:
+       * Complexity:
          * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
          * Space complexity: O(N+E) + O(N) + O(N) -> Space for adjacency list, visited array, and auxiliary space.
 
+<hr/>
+
+
+## Cycle detection in directed graph:
+   1. <a href="https://github.com/sanya2508/Graphs/blob/main/i.%20Cycle%20Detection%20in%20Directed%20Graph%20using%20DFS.cpp">Using DFS: </a>
+     * We will have to use a self dfs along with visited  dfs in case of directed graph.
+     1. We need to create two visited arrays.
+          1. Visited, and
+          2. Dfs visited. (To keep a track if a node was visited in the same dfs call or not).
+     2. We take the initial value of node and check if that is unvisited. If that is unvisited we call the cycleCheck for that node.
+     3. Whenever cycleCheck of a node is called, we mark the visited and dfs visited array for that node as visited.
+     4. Now we call the cycleCheck for the adjacent node. (Also, mark visited in both arrays).
+     5. We do recurvise calls on the adjacent and next adjacent nodes.
+     6. Once we reach to a point where there is no further adjacent nodes that's not visited, there will be no further recursion calls.
+     7. We will try to go back.
+     8. Whenever a recursion call for a function or a dfs is over, we will take that value out of dfs visited array. (Because that dfs is over for that node).
+     9. If while traversing, we find a node that has been visited in both the arrays, then only we can say that cycle is present in the graph.
+     * Complexity:
+         * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
+         * Space complexity: O(N+E) + O(2N) + O(N) -> Space for adjacency list, visited and dfs visited array, and auxiliary space.
+   
+   2. <a href="https://github.com/sanya2508/Graphs/blob/main/l.%20Cycle%20Detection%20in%20Directed%20Graph%20using%20BFS.cpp">Using BFS (Kahn's Algorithm): </a>
+      * Kahn's algorithm is finding topological sort, and topological sort is only possible for directed acylic graph.
+      * So, if a graph has cycle, then topological sort won't be possible.
+      * Here we will use the reverse logic of topological sort.
+      * We will try to generate topological sort, and if we are unable to generate then we can conclude that it's a cyclic graph.
+
+
+<hr/>
+
+## Topological Sorting:
+  * It is defined as a linear ordering of vertices such that if there is an edge u->v, then u appears before v in that ordering.
+  * There can be multiple topological sorting for a given graph.
+  * It is possible only for directed acylic graph.
+  1. <a href="https://github.com/sanya2508/Graphs/blob/main/j.%20Topological%20Sort%20(DFS).cpp">Using DFS: </a>
+      1. We need to run a for loop for all the nodes.
+      2. If any node in the for loop is unvisited, then we will call the dfs for that node.
+      3. We also need to carry a data strucuture (stack), and a visited array (initially marked 0).
+      4. Whenever all the adjacent nodes have been visited for the current node, (that means dfs for that node is over), then we will put that node into the stack.
+      5. Once the for loop is over, the stack will be the desired output of topological sort.
+      * Complexity:
+         * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
+         * Space complexity: O(N+E) + O(2N) + O(N) -> Space for adjacency list, visited array and stack, and auxiliary space.
+   2. <a href="https://github.com/sanya2508/Graphs/blob/main/k.%20Topological%20Sort%20(BFS).cpp">Using BFS (Kahn's Algorithm) :</a>
+      1. BFS algorithm will be requiring two things.
+         1. Indegree array, marked 0 at the beginning. (Indegree: Number of incoming edges).
+         2. A queue.
+      2. Find out indegree for all the nodes.
+      3. Traverse through the indegree array, and push the nodes with 0 indegrees in the queue.
+      4. Apply bfs for the elements in queue.
+      5. For each element in the queue, check out the adjacent nodes.
+      6. Print that element.
+      7. Go to the adjacent nodes of the element taken in the indegree array, and reduce the indegree for those nodes by 1.
+      8. Anytime the indegree of any node becomes 0, we will push that node in the queue.
+      9. Continue this till the queue gets empty.
+      * Complexity:
+         * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
+         * Space complexity: O(N+E) + O(N) + O(N) -> Space for adjacency list, indegree array, and queue.
+
+</hr>
+
+    
