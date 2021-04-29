@@ -113,5 +113,16 @@
         * Space complexity: O(N+E) + O(N) + O(N) -> Space for adjacency list, visited array, and queue.
 
 
-  * <a href
-     
+  * <a href="https://github.com/sanya2508/Graphs/blob/main/f.%20Cycle%20detection%20in%20Undirected%20Graph%20using%20dfs.cpp">Using DFS: </a>
+     * While traversing in a depth order fashion, if any of the node has been visited previously, then we can say that there is a cycle.
+     1. Create a visited array of size V+1. Mark all the indexes as zero.
+     2. Run a for loop so that it calls bfs for every component of the graph.
+     3. In the normal bfs we did just put the node in the queue, but here we will modify it. 
+     4. Here we are going to put the node, as well as their previous/parent node in the queue.
+     5. Take the previous/parent node for the starting node as -1.
+     6. Make a recursive call to its adjacent nodes, and mark those nodes as visited.
+     7. If we get any adjacent node, that's already been visited (not including the parent node), return true (cycle present), else if there are no further recursion calls, return false (cycle not present).
+
+
+<hr/>
+
