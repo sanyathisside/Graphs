@@ -41,23 +41,23 @@
     * Space complexity: O(n*n)
   
   2. <a href="https://github.com/sanya2508/Graphs/blob/main/b.%20Adjacency%20List%20Representation.cpp">Adjacency List: </a>
-    1. If it's an undirected or directed graph, we are going to have vector<int> of an adjaceny array of size (n+1).
-       * For directed:
-          ```
-          adj[u].push_back(v);
-          ```
+      1. If it's an undirected or directed graph, we are going to have vector<int> of an adjaceny array of size (n+1).
+        * For directed:
+           ```
+           adj[u].push_back(v);
+           ```
           
-       * For undirected: 
+        * For undirected: 
           ```
           adj[u].push_back(v);
           adj[v].push_back(u);
           ```
           
    2. Then we can store adjacent nodes at each index for all the index in their respective vector. 
-    * Space complexity: 
+   * Space complexity: 
       * Undirected: O(N+2E)
       * Directed: O(N+E)
-    * If there is an edge weight as well, then we can convert the vector into pair <int, int> instead of int.
+   * If there is an edge weight as well, then we can convert the vector into pair <int, int> instead of int.
 
 
 <hr/>
