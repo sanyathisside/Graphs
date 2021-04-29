@@ -117,12 +117,34 @@
      * While traversing in a depth order fashion, if any of the node has been visited previously, then we can say that there is a cycle.
      1. Create a visited array of size V+1. Mark all the indexes as zero.
      2. Run a for loop so that it calls bfs for every component of the graph.
-     3. In the normal bfs we did just put the node in the queue, but here we will modify it. 
-     4. Here we are going to put the node, as well as their previous/parent node in the queue.
+     3. In the normal dfs we did just take the node and do a recursive dfs call. 
+     4. Here we are going to take the node, as well as their previous/parent node for making recursive call.
      5. Take the previous/parent node for the starting node as -1.
      6. Make a recursive call to its adjacent nodes, and mark those nodes as visited.
      7. If we get any adjacent node, that's already been visited (not including the parent node), return true (cycle present), else if there are no further recursion calls, return false (cycle not present).
 
 
 <hr/>
+
+## Bipartite graphs:
+  * A graph that can be coloured using exactly two colors such that no two adjacent nodes have same color.
+     * Observation: 
+       * Any graph that has an odd length cycle cannot be a bipartite.
+       * Any graph that doesn't have an odd length cycle can be a bipartite graph (graph with even length cycle, or graph with no cycle).
+     * ### <a href="https://github.com/sanya2508/Graphs/blob/main/g.%20Bipartite%20Graph%20bfs.cpp">Using BFS: </a>
+       1. Create a color array of size V+1. Mark all the indexes as -1. Take two colours (0 and 1).
+       2. Now, we take a queue, insert the first node into it, and color it with color 1.
+       3. Take the adjacent node, put that node in the queue, and color it with exact opposite color (0).
+       4. Continue this for further adjacent nodes.
+       5. Also keep checking the color of adjacent nodes for each node.
+       6. If we come across a situation where two adjacent nodes have same color, we will return false (graph is not bipartite), else return true.
+       * Complexity:
+         * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
+         * Space complexity: O(N+E) + O(N) + O(N) -> Space for adjacency list, visited array, and queue.
+     * ### <a href="https://github.com/sanya2508/Graphs/blob/main/h.%20Bipartite%20Graph%20dfs.cpp">Using DFS: </a>
+       1. Create a color array of size V+1. Mark all the indexes as -1. Take two colours (0 and 1).
+       2. Mark the color for the first node (1) and do a recursive call for the adjacent node.
+       3. Mark the adjacent node with exactly opposite color, and continue the recursive call for the next adjacent nodes.
+       4. Also keep checking the color of adjacent nodes for each node.
+       5. If we come across a situation where two adjacent nodes have same color, we will return false (graph is not bipartite), else return true.
 
