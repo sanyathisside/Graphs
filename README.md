@@ -315,5 +315,49 @@
          * Complexity:
            * Time complexity: O(N+E+NlogN)
            * Space complexity: O(N+E) + O(4N)
+   * ### <a href="https://github.com/sanya2508/Graphs/blob/main/q.%20Kruskal's%20Algorithm.cpp">Kruskal's Algorithm (Using Disjoint Set): </a>
+     1. We are not going to store the graph in adjacency list. We will store it in a simple linear data strucutre.
+     2. Sort all the edges according to weight.
+     3. Greedily pick up the shortest edge.
+     4. Check if both the nodes of that edge belong to same component or not (using disjoint set).
+     5. If not take that edge.
+     6. Next, again greedily pick up the next shortest edge. Then 4,5.
+     7. If there comes a case where two nodes of an edge belongs to the same component we will not take that edge.
+     8. Do this for all the edges.
+     9. Once all the edges are covered, the resulting tree will be our minimum spanning tree.
+     * Complexity: (for M edges)
+       * Time complexity: O(MlogM) + O(M*4α) ≈ O(MlogM) -> Sort the edges, iterating over the edges and checking if they belong to same component or not.
+       * Space complexity: O(3M) + O(N) + O(N) -> For storing edges, parent and rank array for implementation of disjoint set.
 
 <hr/>
+
+
+## Disjoint Set | Union By Rank and Path Compression:
+   * ### Disjoint Set data strucuture:
+      * This data structure is going to provide us with two different operations:
+        1. findParent()
+        2. Union() 
+      1. Assume there are 7 nodes and each node belongs to different component.
+      2. Every one is its parent itself.
+      3. Now, if we need to find the parent of any node then we will get the same node only.
+      4. Now, Union(1,2)-> which means combine them in a single component.
+      5. After combining, let's assume one node as the parent for both.
+      6. Now, do Union(2,3)-> hence 3 nodes in a single component.
+      7. Again, let's assume 1 as the parent of all three.
+      8. Now, Union(4,5) -> Parent:4.
+      9. Now, Union(6,7) -> Parent:6.
+      10. Now, Union(5,6) -> Parent:4.
+      11. If two nodes has same parent, then they belong to one component.
+      12. Now, Union(3,7) -> Parent:1.
+      * So, the efficient implementation of disjoint set is done by union by rank, and path compression.
+        * So, we make sure that there is a parent array, and every node has itself as the parent when we start.
+        * We also maintain another array (rank array), which is going to store the rank of all these nodes.
+        * Make initial rank of all the nodes as zero.
+        * Start doing the union operation.
+        * For the first two nodes, make any of them as the parent (since rank for both the nodes are zero).
+        * Whenever we are attaching two similar rank nodes, we need to make sure that the node to whom we are attaching, we need to increase it's rank by 1.
+        * Take the next union, compare ranks, and the one with higher rank will be the parent for that node.
+        * Do path compression whenever required.
+      * Complexity:
+        * Time complexity: O(4α) ≈ O(4) -> If there are m operations we are doing m time as every union operation is done in constant time (4α is mathematically proved).
+        * Space complexity: O(2N) -> Rank array, and parent array.
