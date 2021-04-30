@@ -210,7 +210,7 @@
          * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
          * Space complexity: O(N+E) + O(N) + O(N) -> Space for adjacency list, indegree array, and queue.
 
-</hr>
+<hr/>
 
 
 ## <a href="https://github.com/sanya2508/Graphs/blob/main/m.%20Shortest%20Path%20in%20Undirected%20Graph%20with%20Unit%20Weights%20(BFS).cpp">Shortest Path in Undirected Graph with Unit Weights: </a>
@@ -257,4 +257,5 @@
 
 <hr/>
 
-## 
+## Shortest Path in Undirected Graphs (Dijkstra's Algorithm):
+
