@@ -275,13 +275,13 @@
 
 <hr/>
 
-## <a href="">Minimum spanning tree: </a>
+## Minimum spanning tree: 
    * Whenever we can draw a tree from a given graph such that the tree has all the N nodes, and the number of edges is N-1 such that every node can be reachable from every other node, that's when we call it a minimum spanning tree.
    * The minimum refers to the spanning tree with the minimum weight amongst all the other spanning trees that can be formed from a graph.
    * This can be find using two different algorithms:
       1. Prim's Algorithm
       2. Kruskal's Algorithm 
-   * ### <a href="">Prim's Algorithm for Minimum Spanning Tree: </a>
+   * ### Prim's Algorithm for Minimum Spanning Tree:
       * Intuition: 
         1. Start with the first node, and find the minimum weighted edge attached to this node.
         2. Take that edge, and the node connected to that edge.
@@ -290,7 +290,7 @@
         5. Now continue the same for all the three nodes. Find the adjacent node with the minimal edge weight.
         6. Do this until all the nodes are covered.
         7. The tree that we will get would be the MST.
-      * Implementation:
+      * #### <a href="https://github.com/sanya2508/Graphs/blob/main/p.1.%20Prim's%20Algorithm%20(Brute%20Force).cpp">Implementation (Brute Force): </a>
         1. We will be requiring three different arrays.
            1. Key array of size N (everything initialized to infinity in the beginning apart from the zero index).
            2. MST array (everything initialized to false in the beginning).
@@ -301,10 +301,19 @@
         5. For each adjacent node of that node, mark the edge weight for that adjacent node as the weight in the key array, and also mark its parent in the parent array.
         6. Take the next node from the key array with minimum value and not part of mst.
         7. Mark that node as true in the mst array.
-        8. Again check for all the adjacent nodes (11,12,13), but don't consider the nodes that are marked true in mst array.
+        8. Again check for all the adjacent nodes (5,6,7), but don't consider the nodes that are marked true in mst array.
         9. If at any instance the weight of any adjacent node is already having a lesser weight, then don't change the weight for that node.
         10. Continue this till all the nodes in mst becomes true.
         11. Iterate the parent array and form the tree.
         12. The tree that we will get would be the MST.
+         * Complexity:
+            * Time complexity: O(>N^2)
+            * Space complexity: O(N+E) + O(3N)
+      * #### <a href="https://github.com/sanya2508/Graphs/blob/main/p.2.%20Prim's%20Algorithm%20(Efficient).cpp">Implementation (Efficient approach): </a>
+        1. We can use priority queue that will give us the minimal value from the key array.
+        2. Do the modifications accordingly.
+         * Complexity:
+           * Time complexity: O(N+E+NlogN)
+           * Space complexity: O(N+E) + O(4N)
 
 <hr/>
