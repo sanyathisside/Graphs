@@ -212,4 +212,49 @@
 
 </hr>
 
-    
+
+## <a href="https://github.com/sanya2508/Graphs/blob/main/m.%20Shortest%20Path%20in%20Undirected%20Graph%20with%20Unit%20Weights%20(BFS).cpp">Shortest Path in Undirected Graph with Unit Weights: </a>
+   * We need to find the shortest distance to every node, from the given source.
+   * We can solve this using bfs and doing some modifications to it.
+   1. We will take a distance array of size similar to the number of nodes, and mark each as infinity.
+   2. Now we will take a queue that is always going to store the nodes.
+   3. Put the source node into the queue, and mark its distance as zero.
+   4. Take the source node out, and check its adjacent nodes.
+   5. Take the adjacent nodes of the node and mark their distace as 1.
+   6. Put those adjacent nodes into the queue.
+   7. Take the nodes from queue one by one.
+   8. For each node check their adjacent nodes.
+   9. For each adjacent node, to get the distance of that adjacent node add a distance of 1 to the distance of the node from source node, and also compare it to the already assigned distance. Take the minimum of both.
+   10. Conitinue this till the queue gets empty.
+   * Complexity:
+       * Time complexity: O(N+E) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall.
+       * Space complexity: O(N+E) + O(N) + O(N) -> Space for adjacency list, distance array, and queue.
+
+
+<hr/>
+
+## <a href="https://github.com/sanya2508/Graphs/blob/main/n.%20Shortest%20Path%20in%20weighted%20Directed%20Acyclic%20Graph%20(DAG).cpp">Shortest Path in weighted Directed Acyclic Graph:</a>
+  * Given a source, we need to find the shortest distance for every other node from source.
+  * We will find the topological sort and then it will be a simple comparison algorithm on bfs.
+  1. Since it's a weighted graph, we need to store the node in pairs (node and weight).
+  2. We will need a stack, a visited array, and a distance array.
+  3. Mark every node as unvisited in visited array.
+  4. Mark every node as infinity in distance array.
+  5. Take the source node, mark it as visited.
+  6. Do a recursion call to its adjacent nodes one by one for all the adjacent nodes. There will be no calls made for the node that's already been visited.
+  7. Keep marking the nodes as visited whenver a call is being made to that node. 
+  8. When we reach to a point where there is no further recursion calls, take the end node(the node from which we are returning back, similar thing we did in dfs topological sort) and put it into the stack.
+  9. We will get the topological sort in the stack.
+  10. Make the distance of source element as zero in the distance array.
+  11. Take the first element out of the stack.
+  12. Check the distance of first element (it should not be infinity).
+  13. Take the adjacent nodes one by one for that element and add the distance of that adjacent node to the distance of the element, and also compare it to the already assigned distance.
+  14. Take the minimum of both.
+  15. Continue this for all the nodes (in the stack) till the stack gets empty.
+  * Complexity:
+       * Time complexity: O(2(N+E)) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall. We are traversing twice.
+       * Space complexity: O(N+E) + O(N) + O(N) + O(N/0) -> Space for stack, distance array, and (auxiliary space, depends if we are using dfs or bfs for topological sort).
+
+<hr/>
+
+## 
