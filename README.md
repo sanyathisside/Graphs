@@ -257,5 +257,54 @@
 
 <hr/>
 
-## Shortest Path in Undirected Graphs (Dijkstra's Algorithm):
+## <a href="https://github.com/sanya2508/Graphs/blob/main/o.%20Shortest%20Path%20in%20Undirected%20Graphs%20(Dijkstra's%20Algorithm).cpp">Shortest Path in Undirected Graphs (Dijkstra's Algorithm):</a>
+   1. We will have a priority queue (that will store distance, node).
+   2. Priority queue should be a min heap, so that the element with the lower distance should always be on top of priority queue.
+   3. We will also be having a distance array of the size of nodes+1, initially marked as infinity.
+   4. Take the first node out of queue and mark its distance as zero.
+   5. Insert the distance of that node, and the node in the priority queue. 
+   6. Now start iterating the graph similar to bfs.
+   7. Take the adjacent nodes of that element one by one, and add the distance of that adjacent node to the distance of the element, and also compare it to the already assigned distance.
+   8. Put the node and distance in the priority queue.
+   9. Take the first element from the priority queue. (It will be storing the element with lower distant on top).
+   10. Take the adjacent nodes, and repeat the above process. (7,8,9)
+   11. Continue this till the priority queue becomes empty.
+   * Complexity:
+      * Time complexity: O((N+E)logN) -> N is time taken for visiting N nodes, and E is for travelling through adjacent nodes overall. Log N is for priority queue.
+      * Space complexity: O(N+E) + O(N) + O(N)  
 
+<hr/>
+
+## <a href="">Minimum spanning tree: </a>
+   * Whenever we can draw a tree from a given graph such that the tree has all the N nodes, and the number of edges is N-1 such that every node can be reachable from every other node, that's when we call it a minimum spanning tree.
+   * The minimum refers to the spanning tree with the minimum weight amongst all the other spanning trees that can be formed from a graph.
+   * This can be find using two different algorithms:
+      1. Prim's Algorithm
+      2. Kruskal's Algorithm 
+   * ### <a href="">Prim's Algorithm for Minimum Spanning Tree: </a>
+      * Intuition: 
+        1. Start with the first node, and find the minimum weighted edge attached to this node.
+        2. Take that edge, and the node connected to that edge.
+        3. Check out all the adjacent edges among both the nodes which one is the minimal.
+        4. Take the minimal edge along with the node.
+        5. Now continue the same for all the three nodes. Find the adjacent node with the minimal edge weight.
+        6. Do this until all the nodes are covered.
+        7. The tree that we will get would be the MST.
+      * Implementation:
+        1. We will be requiring three different arrays.
+           1. Key array of size N (everything initialized to infinity in the beginning apart from the zero index).
+           2. MST array (everything initialized to false in the beginning).
+           3. Parent array (everythin initialized to -1 in the beginning).
+        2. Find out the node with the minimum possible key value that is not the part of the mst and take that node.
+        3. Mark the node as true in mst array.
+        4. Check out all the adjacent nodes of that node.
+        5. For each adjacent node of that node, mark the edge weight for that adjacent node as the weight in the key array, and also mark its parent in the parent array.
+        6. Take the next node from the key array with minimum value and not part of mst.
+        7. Mark that node as true in the mst array.
+        8. Again check for all the adjacent nodes (11,12,13), but don't consider the nodes that are marked true in mst array.
+        9. If at any instance the weight of any adjacent node is already having a lesser weight, then don't change the weight for that node.
+        10. Continue this till all the nodes in mst becomes true.
+        11. Iterate the parent array and form the tree.
+        12. The tree that we will get would be the MST.
+
+<hr/>
