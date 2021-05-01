@@ -364,10 +364,36 @@
 
 <hr/>
 
-## Bridges in Graph:
+## <a href="https://github.com/sanya2508/Graphs/blob/main/r.%20Bridges%20in%20Graph%20(Cut%20Edge).cpp">Bridges in Graph || Cut Edge: </a>
    * Bridge are those edges in a graph on whose removal the graph is broken into two or more number of components.
    * In order to find out the bridges in a graph:
      1. We will be using two different arrays:
-        1. Time of inserttion for a given node
+        1. Time of insertion for a given node.
         2. Lowest time of insertion.
-     2. 
+     2. Start with the first node(1). Mark it's time of insertion as 1 and lowest time of insertion also as 1.
+     3. Move to the next node(2). Mark it's time of insertion as 2 and lowest time of insertion also as 2.
+     4. Do this for all the nodes in the graph in a dfs manner.
+     5. If while returning at any moment we find any node having less lowest time of insertion in the from from which it is returning as compared to itself, it marks its lowest time of insertion same as that of its adjacent node. (We are only updating the value low whenever the dfs for the adjacent node is completed).
+     6. If low[adjacent] > time of insertion[node] then we can say it's a bridge.
+     * Complexity:
+       * Time complexity: O(N+E) -> We are doing a dfs only.
+       * Space complexity: O(N+E) + O(2N) and auxiliary space. 
+
+<hr/>
+
+## <a href=""></a>
+   * 
+
+<hr/>
+
+
+<hr/>
+
+## <a>Bellman Ford Algorithm (Detect Negative Weight Cycle in Graphs): </a>
+   * Dijkstra's algorithm does give us the shortest path from source to every other node, but dijkstra's algorithm works for only positive weighted edge.
+   * If we follow the Dijkstra's algorithm, and there is an edge with negative weigth then it will end up in an infinite loop.
+   * Bellman Ford will work for negative edges in directed graph, but there is a certain condition.
+      * If there is a negative cycle, then we will not be able to find out the shortest parth.
+   * Bellman Ford will tell us if there is a negative cycle or not.
+   * Also, if there is an undirected graph, then we will first convert the graph into a directed graph using bidirectional edges.
+   
