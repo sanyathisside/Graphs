@@ -381,8 +381,23 @@
 
 <hr/>
 
-## <a href=""></a>
-   * 
+## <a href="https://github.com/sanya2508/Graphs/blob/main/s.%20Articulation%20Point%20(Cut%20Vertex).cpp">Articulation Point | Cut Vertex: </a>
+   * Articulation point is a node on whose removal the graph is broken down into two or more number of components.
+   1. We will be using two different arrays:
+        1. Time of insertion for a given node.
+        2. Lowest time of insertion.
+   2. Start with the first node(1). Mark it's time of insertion as 1 and lowest time of insertion also as 1.
+   3. Move to the next node(2). Mark it's time of insertion as 2 and lowest time of insertion also as 2.
+   4. Do this for all the nodes in the graph in a dfs manner.
+   5. If while returning at any moment we find any node having less lowest time of insertion in the from from which it is returning as compared to itself, it marks its lowest time of insertion same as that of its adjacent node. (We are only updating the value low whenever the dfs for the adjacent node is completed).
+   6. If low[it] >= time of insertion[node]  && parent != -1, then we can say the node is an articulation point.
+   7. The starting parent can only be an articulation point if ( individual childs > 1 && parent == -1).
+   8. Note: These articulation points might repeat while traversing.
+   * Complexity:
+      * Time complexity: O(N+E) -> dfs function.
+      * Space complexity: O(N+E) +O(2N) + O(N) -> 2 arrays, amd auxiliary space.
+
+
 
 <hr/>
 
