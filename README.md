@@ -361,3 +361,13 @@
       * Complexity:
         * Time complexity: O(4α) ≈ O(4) -> If there are m operations we are doing m time as every union operation is done in constant time (4α is mathematically proved).
         * Space complexity: O(2N) -> Rank array, and parent array.
+
+<hr/>
+
+## Bridges in Graph:
+   * Bridge are those edges in a graph on whose removal the graph is broken into two or more number of components.
+   * In order to find out the bridges in a graph:
+     1. We will be using two different arrays:
+        1. Time of inserttion for a given node
+        2. Lowest time of insertion.
+     2. 
