@@ -397,10 +397,18 @@
       * Time complexity: O(N+E) -> dfs function.
       * Space complexity: O(N+E) +O(2N) + O(N) -> 2 arrays, amd auxiliary space.
 
-
-
 <hr/>
 
+## <a href="https://github.com/sanya2508/Graphs/blob/main/t.%20Kosaraju's%20Algorithm%20for%20Strongly%20Connected%20Components%20(SCC).cpp">Kosaraju's Algorithm for Strongly Connected Components (SCC): </a>
+   * This algorithm helps us to find all the strongly connected components in a directed graph.
+   * Strongly connected components: A component in which if you start from any node, you can reach every other node in that component.
+   * Kosaraju's algorithm tries to have a dfs right starting from the back edges so that only those nodes in the scc are visited.
+   1. Sort all the nodes in order of finishing time. (Apply topological sort).
+   2. Transpose the graph. (Reverse all the edgees).
+   3. Do the dfs according to the finishing time.
+   * Complexity:
+      * Time complexity: O(N) + O(N+E) + O(N+E) -> Topological sort, Transpose, DFS.
+      * Space complexity: O(N+E) + O(N+E) + O(N) + O(N) -> Transpose graph, visited array, stack.
 
 <hr/>
 
