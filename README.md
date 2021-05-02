@@ -436,8 +436,17 @@
       * If there is a negative cycle, then we will not be able to find out the shortest parth.
    * Bellman Ford will tell us if there is a negative cycle or not.
    * Also, if there is an undirected graph, then we will first convert the graph into a directed graph using bidirectional edges.
-   * 
-   
+   1. We need to take a distance array.
+   2. For source mark the distance as zero, and for every other node mark it as infinity.
+   3. Relax all the edges (N-1) times.
+      * if(dist[u]+wt <dist[v]) dist[v]= dist[u]+wt; 
+   4. The distances we get after relaxing (N-1) times is the shortest distance.
+   5. To detect if it's a negative edge weight:
+       * Relax the edges one more time.
+       * If distance reduces further, that means it has a negative cycle. 
+   * Complexity:
+       * Time complexity: O(N-1) * O(E) -> Very bad as compared to Dijkstra's.
+       * Space complexity: O(N+E) + O(N) ->distance array.
 
 
 <hr/>
