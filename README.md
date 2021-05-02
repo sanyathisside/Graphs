@@ -1,5 +1,21 @@
 # Graphs
 
+|#|Topic|#|Topic|
+|-|-----|-|-----|
+|1.|<a href="https://github.com/sanya2508/Graphs#introduction">Introduction</a>|2.|<a href="https://github.com/sanya2508/Graphs#graph-representation-in-c">Graph representation</a>|
+|3.|<a href="https://github.com/sanya2508/Graphs#traversal-techniques">Traversal Techniques</a>|4.|<a href="https://github.com/sanya2508/Graphs#cycle-detection-in-undirected-graph">Cycle detection in undirected graph</a>|
+|5.|<a href="https://github.com/sanya2508/Graphs#bipartite-graphs">Bipartite graphs</a>|6.|<a href="https://github.com/sanya2508/Graphs#cycle-detection-in-directed-graph">Cycle detection in directed graph</a>|
+|7.|<a href="https://github.com/sanya2508/Graphs#topological-sorting">Topological Sorting</a>|8.|<a href="https://github.com/sanya2508/Graphs#shortest-path-in-undirected-graph-with-unit-weights-">Shortest Path in Undirected Graph with Unit Weights</a>|
+|9.|<a href="https://github.com/sanya2508/Graphs#shortest-path-in-weighted-directed-acyclic-graph">Shortest Path in weighted DAG</a>|10.|<a href="https://github.com/sanya2508/Graphs#shortest-path-in-undirected-graphs-dijkstras-algorithm">Shortest Path in Undirected Graphs (Dijkstra's)</a>|
+|11.|<a href="https://github.com/sanya2508/Graphs#minimum-spanning-tree">Minimum spanning tree (Prim's & Kruskal)</a>|12.|<a href="https://github.com/sanya2508/Graphs#disjoint-set--union-by-rank-and-path-compression">Disjoint Set</a>|
+|13.|<a href="https://github.com/sanya2508/Graphs#bridges-in-graph--cut-edge-">Bridges in Graph (Cut Edge)</a>|14.|<a href="https://github.com/sanya2508/Graphs#articulation-point--cut-vertex-">Articulation Point (Cut Vertex)</a>|
+|15.|<a href="https://github.com/sanya2508/Graphs#kosarajus-algorithm-for-strongly-connected-components-scc-">Kosaraju's Algorithm for SCC</a>|16.|<a href="https://github.com/sanya2508/Graphs#bellman-ford-algorithm-detect-negative-weight-cycle-in-graphs-">Bellman Ford Algorithm (Detect Negative Weight Cycle)</a>|
+
+<hr/>
+
+
+
+
 ## Introduction: 
 
 * Graph is a data structure which has two components:
@@ -380,6 +396,7 @@
        * Space complexity: O(N+E) + O(2N) and auxiliary space. 
 
 <hr/>
+
 
 ## <a href="https://github.com/sanya2508/Graphs/blob/main/s.%20Articulation%20Point%20(Cut%20Vertex).cpp">Articulation Point | Cut Vertex: </a>
    * Articulation point is a node on whose removal the graph is broken down into two or more number of components.
