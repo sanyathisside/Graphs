@@ -412,11 +412,19 @@
 
 <hr/>
 
-## <a>Bellman Ford Algorithm (Detect Negative Weight Cycle in Graphs): </a>
+## <a href="https://github.com/sanya2508/Graphs/blob/main/u.%20Bellman%20Ford%20Algorithm%20%7C%20Detect%20Negative%20Weight%20Cycle%20in%20Graphs.cpp">Bellman Ford Algorithm (Detect Negative Weight Cycle in Graphs): </a>
    * Dijkstra's algorithm does give us the shortest path from source to every other node, but dijkstra's algorithm works for only positive weighted edge.
    * If we follow the Dijkstra's algorithm, and there is an edge with negative weigth then it will end up in an infinite loop.
    * Bellman Ford will work for negative edges in directed graph, but there is a certain condition.
       * If there is a negative cycle, then we will not be able to find out the shortest parth.
    * Bellman Ford will tell us if there is a negative cycle or not.
    * Also, if there is an undirected graph, then we will first convert the graph into a directed graph using bidirectional edges.
+   * 
    
+
+
+<hr/>
+
+
+## Floyd Warshall Algorithm
+## Tarjan's Algorithm
