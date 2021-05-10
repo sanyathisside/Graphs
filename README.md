@@ -48,7 +48,7 @@
  1. <a href="https://github.com/sanya2508/Graphs/blob/main/a.%20Adjacency%20matrix%20representation.cpp">Adjacency matrix: </a>
     1. Find out the number of nodes.
     2. Check if it is one based indexing or zero based indexing.
-       * If it is one based indexing we create 6*6 2D array.
+       * If it is one based indexing we create (N+1)*(N+1) 2D array.
     3. Fill the 2D array with zeroes.
     4. Iterate over all the edges and mark 1 whenever there is an edge present for that node. (adj[u][v] =1)
        * If the graph is undirected, mark the reverse edge 1 as well. (adj[u][v] =1) and (adj[v][u] =1) 
